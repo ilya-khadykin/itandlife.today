@@ -1,7 +1,8 @@
 const headerNavLinks = [
   { href: '/blog', title: 'Blog' },
   { href: '/tags', title: 'Tags' },
-  { href: '/projects', title: 'Projects' },
+  // TODO(projects): add projects once there are good ones to show.
+  // { href: '/projects', title: 'Projects' },
   { href: '/about', title: 'About' },
 ]
 

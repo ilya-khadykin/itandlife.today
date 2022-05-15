@@ -3,6 +3,7 @@ import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 
+// TODO(projects): move to pages and add to nav bar when this page is ready.
 export default function Projects() {
   return (
     <>
