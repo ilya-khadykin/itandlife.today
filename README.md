@@ -1,10 +1,12 @@
-# Changes to the original template
-- commented a link to `/projects` in `headerNavLinks.ts` 
+# Implemented features/changes
+## Projects page
+- commented a link to `/projects` in `headerNavLinks.ts`
 - moved `/projects` page to `pages_unused` directory to implement it in future (`TODO(projects)`)
-
-# TODOs and future features
-- [ ] Add `/projects` page
-
+## Blog
+### Posts Layout
+- moved publish date under blog post title
+- displayed tags under blog post `<header>` for `PostSimple` layout
+- decreased margin and paddings in blog post header
 
 
 # Tailwind Nextjs Starter Blog

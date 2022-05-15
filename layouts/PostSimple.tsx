@@ -9,6 +9,7 @@ import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import { ReactNode } from 'react'
 import type { Blog } from 'contentlayer/generated'
+import Tag from '@/components/Tag'
 
 interface Props {
   content: CoreContent<Blog>
@@ -18,7 +19,7 @@ interface Props {
 }
 
 export default function PostLayout({ content, next, prev, children }: Props) {
-  const { slug, date, title } = content
+  const { slug, date, title, tags } = content
 
   return (
     <SectionContainer>
@@ -27,7 +28,10 @@ export default function PostLayout({ content, next, prev, children }: Props) {
       <article>
         <div>
           <header>
-            <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
+            <div className="space-y-1 border-b border-gray-200 pb-5 text-center dark:border-gray-700">
+              <div>
+                <PageTitle>{title}</PageTitle>
+              </div>
               <dl>
                 <div>
                   <dt className="sr-only">Published on</dt>
@@ -36,17 +40,20 @@ export default function PostLayout({ content, next, prev, children }: Props) {
                   </dd>
                 </div>
               </dl>
-              <div>
-                <PageTitle>{title}</PageTitle>
-              </div>
             </div>
           </header>
+          <div className="flex flex-wrap border-b border-gray-200 py-2.5 dark:border-gray-700">
+            <span className="mr-1.5 text-sm font-medium">Tags:</span>
+            {tags.map((tag) => (
+              <Tag key={tag} text={tag} />
+            ))}
+          </div>
           <div
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:divide-y-0 "
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
+              <div className="prose max-w-none pt-2.5 pb-8 dark:prose-dark">{children}</div>
             </div>
             <Comments frontMatter={content} />
             <footer>
