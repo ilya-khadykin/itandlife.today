@@ -1,3 +1,17 @@
+# Bugs
+- [ ] draft posts are displayed on list page (blog home)
+
+# TODOs and future features
+- [ ] Add `/projects` page
+- [ ] Post tags should be displayed under blog post title
+- [ ] Move `footer` for `PostLayout` (set as default) to the right (use `PostSimple` layout as a workaround for now)
+- [ ] Improve tag page for SEO and
+- [ ] support for subscribing to particular tags
+- [ ] TOC for blog posts
+- [ ] page views count
+- [ ] subscribe to newsletter form
+- [ ] post read time
+
 # Implemented features/changes
 ## Projects page
 - commented a link to `/projects` in `headerNavLinks.ts`
