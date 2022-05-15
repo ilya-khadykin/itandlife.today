@@ -1,5 +1,5 @@
 # Bugs
-- [ ] draft posts are displayed on list page (blog home)
+- [ ] draft posts are displayed on list page (blog posts list and home page)
 
 # TODOs and future features
 - [ ] Add `/projects` page
