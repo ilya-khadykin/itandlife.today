@@ -7,7 +7,8 @@
 - moved publish date under blog post title
 - displayed tags under blog post `<header>` for `PostSimple` layout
 - decreased margin and paddings in blog post header
-
+### List page
+- updated `POSTS_PER_PAGE` to 10
 
 # Tailwind Nextjs Starter Blog
 
