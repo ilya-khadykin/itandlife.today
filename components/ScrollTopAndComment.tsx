@@ -16,13 +16,18 @@ const ScrollTopAndComment = () => {
   const handleScrollTop = () => {
     window.scrollTo({ top: 0 })
   }
+  /*
+  // TODO(add_comments): add comments to the website (maybe Github issues comments?)
   const handleScrollToComment = () => {
     document.getElementById('comment').scrollIntoView()
   }
+  */
   return (
     <div
       className={`fixed right-8 bottom-8 hidden flex-col gap-3 ${show ? 'md:flex' : 'md:hidden'}`}
     >
+      {/*
+      // TODO(add_comments): add comments to the website (maybe Github issues comments?)
       <button
         aria-label="Scroll To Comment"
         type="button"
@@ -37,6 +42,7 @@ const ScrollTopAndComment = () => {
           />
         </svg>
       </button>
+      */}
       <button
         aria-label="Scroll To Top"
         type="button"

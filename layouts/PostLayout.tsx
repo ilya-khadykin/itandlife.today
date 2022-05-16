@@ -5,13 +5,14 @@ import { BlogSEO } from '@/components/SEO'
 import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import Comments from '@/components/comments'
+//import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { CoreContent } from '@/lib/utils/contentlayer'
 import { ReactNode } from 'react'
 import type { Blog, Authors } from 'contentlayer/generated'
 
-const editUrl = (slug) => `${siteMetadata.siteRepo}/blob/master/data/blog/${slug}`
+// TODO(open_source_blog): consider open source the blog
+// const editUrl = (slug) => `${siteMetadata.siteRepo}/blob/master/data/blog/${slug}`
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `${siteMetadata.siteUrl}/blog/${slug}`
@@ -107,10 +108,16 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 <Link href={discussUrl(slug)} rel="nofollow">
                   {'Discuss on Twitter'}
                 </Link>
+                {/*
+                // TODO(open_source_blog): consider open source the blog
                 {` • `}
                 <Link href={editUrl(slug)}>{'View on GitHub'}</Link>
+                */}
               </div>
+              {/*
+              // TODO(add_comments): add comments to the website (maybe Github issues comments?)
               <Comments frontMatter={content} />
+              */}
             </div>
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">

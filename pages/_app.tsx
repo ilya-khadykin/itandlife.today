@@ -9,7 +9,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import siteMetadata from '@/data/siteMetadata'
-import Analytics from '@/components/analytics'
+//import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -18,7 +18,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
+      {/*
+      // TODO(add_ga): add Google Analytics to the website
       <Analytics />
+      */}
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>

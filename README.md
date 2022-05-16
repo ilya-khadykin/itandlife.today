@@ -2,25 +2,55 @@
 - [ ] draft posts are displayed on list page (blog posts list and home page)
 
 # TODOs and future features
+MUST do issues:
+- [ ] Update images used as logos for SEO (`TODO(update_logo_images)`)
+- [ ] Add better description for website, its title and author bio in `/about` page
+- [ ] Add RSS icon alongside theme switcher icon
+
+Not prioritized:
 - [ ] Add `/projects` page
 - [ ] Post tags should be displayed under blog post title
 - [ ] Move `footer` for `PostLayout` (set as default) to the right (use `PostSimple` layout as a workaround for now)
+- [ ] Remove `Discuss on Twitter` link from `PostLayout`
 - [ ] Improve tag page for SEO and
 - [ ] support for subscribing to particular tags
 - [ ] TOC for blog posts
 - [ ] page views count
-- [ ] subscribe to newsletter form
 - [ ] post read time
+- [ ] Add a link to About page for the author in `PostLayout` template
+- [ ] Add links to other social media sites (`TODO(social_media)`)
+- [ ] Consider open source the blog (`TODO(open_source_blog)`)
+- [ ] Remove unused code (`TODO(delete_unused)`)
+- [ ] Add Google Analytics to the website (`TODO(add_ga)`)
+- [ ] Add subscribe to newsletter form (`TODO(add_newsletter)`)
+- [ ] Add comments to blog posts (`TODO(add_comments)`)
+- [ ] Update blog list page layout for large screens to include post main image
+- [ ] Track usage of `<Head>` tags and include `keys` to avoid duplication of tags
 
 # Implemented features/changes
+## All pages
+- updated favicons
+- updated logo (used emoji) and site name
+- 
+## Newsletter
+- the form was removed for now
+
+## Website Analytics
+- the script was commented out for now
+
+## Comments
+- removed this functionality for now
+
 ## Projects page
 - commented a link to `/projects` in `headerNavLinks.ts`
 - moved `/projects` page to `pages_unused` directory to implement it in future (`TODO(projects)`)
+
 ## Blog
 ### Posts Layout
 - moved publish date under blog post title
 - displayed tags under blog post `<header>` for `PostSimple` layout
 - decreased margin and paddings in blog post header
+- link to edit post on Github was hidden from `PostLayout` template
 ### List page
 - updated `POSTS_PER_PAGE` to 10
 

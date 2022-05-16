@@ -7,7 +7,7 @@ import Image from './Image'
 import CustomLink from './Link'
 import TOCInline from './TOCInline'
 import Pre from './Pre'
-import { BlogNewsletterForm } from './NewsletterForm'
+//import { BlogNewsletterForm } from './NewsletterForm'
 import type { Blog, Authors } from 'contentlayer/generated'
 
 interface MDXLayout {
@@ -32,7 +32,8 @@ export const MDXComponents: ComponentMap = {
   a: CustomLink,
   pre: Pre,
   wrapper: Wrapper,
-  BlogNewsletterForm,
+  // TODO(add_newsletter): add newsletter to the website
+  //BlogNewsletterForm,
 }
 
 export const MDXLayoutRenderer = ({ layout, content, ...rest }: MDXLayout) => {

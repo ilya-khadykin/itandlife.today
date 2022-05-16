@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
 import { sortedBlogPost, allCoreContent } from '@/lib/utils/contentlayer'
 import { InferGetStaticPropsType } from 'next'
-import NewsletterForm from '@/components/NewsletterForm'
+//import NewsletterForm from '@/components/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
 
 const MAX_DISPLAY = 10
@@ -28,7 +28,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             Latest blog posts
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+            Programmer's notes about life and tech
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -94,11 +94,14 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           </Link>
         </div>
       )}
+      {/*
+      // TODO(add_newsletter): add newsletter to the website
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />
         </div>
       )}
+      */}
     </>
   )
 }
