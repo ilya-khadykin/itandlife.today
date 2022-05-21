@@ -1,5 +1,7 @@
 # Bugs
-- [ ] draft posts are displayed on list page (blog posts list and home page)
+- [ ] there might be a problem with `sortedBlogPost()` or `pagination` in `blog.tsx` when the same articles 
+are displayed in different places (discovered it by copying the same post 3 times and one of its copies appears 
+at the bottom of all posts instead of being displayed alongside the previous two)
 
 # TODOs and future features
 MUST do issues:
@@ -29,30 +31,33 @@ Not prioritized:
 
 # Implemented features/changes
 ## All pages
-- updated favicons
-- updated logo (used emoji) and site name
-- 
+- [x] updated favicons
+- [x] updated logo (used emoji) and site name
 ## Newsletter
-- the form was removed for now
+- [x] the form was removed for now
 
 ## Website Analytics
-- the script was commented out for now
+- [x] the script was commented out for now
 
 ## Comments
-- removed this functionality for now
+- [x] removed this functionality for now
 
 ## Projects page
-- commented a link to `/projects` in `headerNavLinks.ts`
-- moved `/projects` page to `pages_unused` directory to implement it in future (`TODO(projects)`)
+- [x] commented a link to `/projects` in `headerNavLinks.ts`
+- [x] moved `/projects` page to `pages_unused` directory to implement it in future (`TODO(projects)`)
 
 ## Blog
 ### Posts Layout
-- moved publish date under blog post title
-- displayed tags under blog post `<header>` for `PostSimple` layout
-- decreased margin and paddings in blog post header
-- link to edit post on Github was hidden from `PostLayout` template
+- [x] moved publish date under blog post title
+- [x] displayed tags under blog post `<header>` for `PostSimple` layout
+- [x] decreased margin and paddings in blog post header
+- [x] link to edit post on Github was hidden from `PostLayout` template
 ### List page
-- updated `POSTS_PER_PAGE` to 10
+- [x] updated `POSTS_PER_PAGE` to 10
+
+## Bug fixes
+- [x] draft posts are displayed on list page (blog posts list and home page)
+---------------
 
 # Tailwind Nextjs Starter Blog
 

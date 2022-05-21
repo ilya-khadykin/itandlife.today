@@ -8,7 +8,7 @@ export function dateSortDesc(a: string, b: string) {
 }
 
 export function sortedBlogPost(allBlogs: Blog[]) {
-  return allBlogs.sort((a, b) => dateSortDesc(a.date, b.date))
+  return allBlogs.filter((post) => !post.draft).sort((a, b) => dateSortDesc(a.date, b.date))
 }
 
 type ConvertUndefined<T> = OrNull<{
