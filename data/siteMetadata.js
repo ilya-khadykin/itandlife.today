@@ -10,8 +10,6 @@ const siteMetadata = {
   // siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog', // Used in PostLayout to display an edit link
   siteLogo: '/static/layout/logo.png', // Used for SEO in structured data
   socialBanner: '/static/images/twitter-card.png', // Used for SEO
-  // TODO(delete_unused): 'image' does not seem to be used anywhere
-  image: '/static/images/avatar.png', // Does not seem to be used
   email: 'mageofit@gmail.com', // Used in RSS and in footer
   github: 'https://github.com/ikhadykin', // Used in footer and on Authors pages
   // TODO(social_media): add links to social media if needed

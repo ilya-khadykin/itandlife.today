@@ -21,7 +21,6 @@ Not prioritized:
 - [ ] Add a link to About page for the author in `PostLayout` template
 - [ ] Add links to other social media sites (`TODO(social_media)`)
 - [ ] Consider open source the blog (`TODO(open_source_blog)`)
-- [ ] Remove unused code (`TODO(delete_unused)`)
 - [ ] Add Google Analytics to the website (`TODO(add_ga)`)
 - [ ] Add subscribe to newsletter form (`TODO(add_newsletter)`)
 - [ ] Add comments to blog posts (`TODO(add_comments)`)
@@ -49,6 +48,9 @@ Not prioritized:
 
 ## SEO
 - [x] Update images used as logos for SEO (`TODO(update_logo_images)`)
+
+## Code cleanup/refactoring
+- [x] Removed unused `image` property from `siteMetadata`
 
 ## Blog
 ### Posts Layout
