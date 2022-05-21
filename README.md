@@ -5,7 +5,6 @@ at the bottom of all posts instead of being displayed alongside the previous two
 
 # TODOs and future features
 MUST do issues:
-- [ ] Update images used as logos for SEO (`TODO(update_logo_images)`)
 - [ ] Add better description for website, its title and author bio in `/about` page
 
 Not prioritized:
@@ -47,6 +46,9 @@ Not prioritized:
 ## Projects page
 - [x] commented a link to `/projects` in `headerNavLinks.ts`
 - [x] moved `/projects` page to `pages_unused` directory to implement it in future (`TODO(projects)`)
+
+## SEO
+- [x] Update images used as logos for SEO (`TODO(update_logo_images)`)
 
 ## Blog
 ### Posts Layout

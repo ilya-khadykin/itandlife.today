@@ -8,8 +8,7 @@ const siteMetadata = {
   siteUrl: 'https://itandlife.today', // Used for RSS, SEO
   // TODO(open_source_blog): consider open source the blog
   // siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog', // Used in PostLayout to display an edit link
-  // TODO(update_logo_images): update images below used as logos for SEO
-  siteLogo: '/static/images/logo.png', // Used for SEO
+  siteLogo: '/static/layout/logo.png', // Used for SEO in structured data
   socialBanner: '/static/images/twitter-card.png', // Used for SEO
   // TODO(delete_unused): 'image' does not seem to be used anywhere
   image: '/static/images/avatar.png', // Does not seem to be used
