@@ -7,9 +7,9 @@ at the bottom of all posts instead of being displayed alongside the previous two
 MUST do issues:
 - [ ] Update images used as logos for SEO (`TODO(update_logo_images)`)
 - [ ] Add better description for website, its title and author bio in `/about` page
-- [ ] Add RSS icon alongside theme switcher icon
 
 Not prioritized:
+- [ ] Add links to RSS for each tag on the respective tag page
 - [ ] Add `/projects` page
 - [ ] Post tags should be displayed under blog post title
 - [ ] Move `footer` for `PostLayout` (set as default) to the right (use `PostSimple` layout as a workaround for now)
@@ -33,6 +33,8 @@ Not prioritized:
 ## All pages
 - [x] updated favicons
 - [x] updated logo (used emoji) and site name
+- [x] added RSS icon alongside theme switcher icon with a link to main RSS feed
+
 ## Newsletter
 - [x] the form was removed for now
 
@@ -57,6 +59,9 @@ Not prioritized:
 
 ## Bug fixes
 - [x] draft posts are displayed on list page (blog posts list and home page)
+- [x] RSS generation ignored sort order of the posts
+- [x] RSS generation included draft posts
+- [x] `sitemap.xml` generation included draft posts
 ---------------
 
 # Tailwind Nextjs Starter Blog

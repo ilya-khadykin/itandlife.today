@@ -5,26 +5,6 @@ import { escape } from './htmlEscaper.mjs'
 import siteMetadata from '../data/siteMetadata.js'
 import { allBlogs } from '../.contentlayer/generated/index.mjs'
 
-// TODO: refactor into contentlayer once compute over all docs is enabled
-export async function getAllTags() {
-  const tagCount = {}
-  // Iterate through each post, putting all found tags into `tags`
-  allBlogs.forEach((file) => {
-    if (file.tags && file.draft !== true) {
-      file.tags.forEach((tag) => {
-        const formattedTag = GithubSlugger.slug(tag)
-        if (formattedTag in tagCount) {
-          tagCount[formattedTag] += 1
-        } else {
-          tagCount[formattedTag] = 1
-        }
-      })
-    }
-  })
-
-  return tagCount
-}
-
 const generateRssItem = (post) => `
   <item>
     <guid>${siteMetadata.siteUrl}/blog/${post.slug}</guid>
@@ -37,7 +17,7 @@ const generateRssItem = (post) => `
   </item>
 `
 
-const generateRss = (posts, page = 'feed.xml') => `
+const generateRss = (posts, page = 'generated/rss/feed.xml') => `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${escape(siteMetadata.title)}</title>
@@ -53,25 +33,54 @@ const generateRss = (posts, page = 'feed.xml') => `
   </rss>
 `
 
+export function dateSortDesc(a, b) {
+  if (a > b) return -1
+  if (a < b) return 1
+  return 0
+}
+
+// TODO: refactor into contentlayer once compute over all docs is enabled
+export async function getAllTags() {
+  const tagCount = {}
+  // Iterate through each post, putting all found tags into `tags`
+  allBlogs.filter((post) => !post.draft).forEach((file) => {
+    if (file.tags && file.draft !== true) {
+      file.tags.forEach((tag) => {
+        const formattedTag = GithubSlugger.slug(tag)
+        if (formattedTag in tagCount) {
+          tagCount[formattedTag] += 1
+        } else {
+          tagCount[formattedTag] = 1
+        }
+      })
+    }
+  })
+
+  return tagCount
+}
+
 async function generate() {
-  // RSS for blog post
-  if (allBlogs.length > 0) {
-    const rss = generateRss(allBlogs)
-    writeFileSync('./public/feed.xml', rss)
+  // RSS for all blog posts
+  const allNoneDraftPosts = allBlogs.filter((post) => !post.draft);
+  if (allNoneDraftPosts.length > 0) {
+    const rss = generateRss(allNoneDraftPosts.sort((a, b) => dateSortDesc(a.date, b.date)))
+    const rssPath = path.join('public', 'generated', 'rss')
+    mkdirSync(rssPath, { recursive: true })
+    writeFileSync('./public/generated/rss/feed.xml', rss)
   }
 
   // RSS for tags
   // TODO: use AllTags from contentlayer when computed docs is ready
-  if (allBlogs.length > 0) {
+  if (allNoneDraftPosts.length > 0) {
     const tags = await getAllTags()
     for (const tag of Object.keys(tags)) {
-      const filteredPosts = allBlogs.filter(
-        (post) => post.draft !== true && post.tags.map((t) => GithubSlugger.slug(t)).includes(tag)
+      const filteredPosts = allNoneDraftPosts.filter(
+        (post) => post.tags.map((t) => GithubSlugger.slug(t)).includes(tag)
       )
-      const rss = generateRss(filteredPosts, `tags/${tag}/feed.xml`)
-      const rssPath = path.join('public', 'tags', tag)
-      mkdirSync(rssPath, { recursive: true })
-      writeFileSync(path.join(rssPath, 'feed.xml'), rss)
+      const tagRss = generateRss(filteredPosts, `generated/rss/tags/${tag}/feed.xml`)
+      const tagRssPath = path.join('public', 'generated', 'rss', 'tags', tag)
+      mkdirSync(tagRssPath, { recursive: true })
+      writeFileSync(path.join(tagRssPath, 'feed.xml'), tagRss)
     }
   }
 }

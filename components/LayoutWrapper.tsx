@@ -6,6 +6,7 @@ import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { ReactNode } from 'react'
+import Image from "next/image";
 
 interface Props {
   children: ReactNode
@@ -41,6 +42,14 @@ const LayoutWrapper = ({ children }: Props) => {
                 </Link>
               ))}
             </div>
+            <a href="/generated/rss/feed.xml" title="Subscribe to RSS feed">
+              <Image
+                src="/static/layout/icons/rss-feed-icon.svg"
+                width="32px"
+                height="32px"
+                alt="RSS icon"
+              />
+            </a>
             <ThemeSwitch />
             <MobileNav />
           </div>

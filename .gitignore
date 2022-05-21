@@ -11,14 +11,13 @@
 # next.js
 /.next/
 /out/
-public/sitemap.xml
 .vercel
 
 # production
 /build
 *.xml
-# rss feed
-/public/feed.xml
+# rss feeds, sitemap and other auto generated files that should be statically served
+/public/generated/*
 
 # misc
 .DS_Store
