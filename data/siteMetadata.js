@@ -9,7 +9,8 @@ const siteMetadata = {
   // TODO(open_source_blog): consider open source the blog
   // siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog', // Used in PostLayout to display an edit link
   siteLogo: '/static/layout/logo.png', // Used for SEO in structured data
-  socialBanner: '/static/images/twitter-card.png', // Used for SEO
+  // TODO: improve website logo which will be displayed while sharing on Twitter ('twitter-card.png)
+  socialBanner: '/static/layout/logo.png', // Used for SEO
   email: 'mageofit@gmail.com', // Used in RSS and in footer
   github: 'https://github.com/ikhadykin', // Used in footer and on Authors pages
   // TODO(social_media): add links to social media if needed
