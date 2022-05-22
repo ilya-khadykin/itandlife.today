@@ -2,6 +2,7 @@
 - [ ] there might be a problem with `sortedBlogPost()` or `pagination` in `blog.tsx` when the same articles 
 are displayed in different places (discovered it by copying the same post 3 times and one of its copies appears 
 at the bottom of all posts instead of being displayed alongside the previous two)
+- [ ] pagination does not work correctly, the same posts are shown on two pages
 
 # TODOs and future features
 MUST do issues:
