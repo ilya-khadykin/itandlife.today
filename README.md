@@ -9,6 +9,8 @@ MUST do issues:
 - [ ] Add better description for website, its title and author bio in `/about` page
 
 Not prioritized:
+- [ ] [Setup budget alerts for GCP project used by Firebase Hosting](https://firebase.google.com/docs/projects/billing/avoid-surprise-bills#set-up-budget-alert-emails)
+- [ ] [Connect deployed website to Firebase web app to get analytics data](https://firebase.google.com/docs/web/setup)
 - [ ] Add recommendation card and update `/blog/windows/chocolatey-real-time-saver-for-software-management-on-windows` 
 post to use it in the end
 - [ ] Make images clickable in the post to show them in their full size on click
@@ -71,7 +73,27 @@ post to use it in the end
 - [x] RSS generation ignored sort order of the posts
 - [x] RSS generation included draft posts
 - [x] `sitemap.xml` generation included draft posts
+
+## Deployment
+- [x] Image optimization during static site generation is fixed by using `next-image-export-optimizer`
+- [x] A project is set up to deploy statically generated site in Firebase
 ---------------
+
+
+# Deployment
+The website is basically a set of static files and these files are the only thing that should be deployed.
+
+Firebase provides website hosting and steps below assume this choice.
+
+`itandlife-today-website` GCP project is configured to be used by Firebase during deployment.
+<br>`out` directory should contain the files to deploy 
+
+More details about Firebase hosting - https://firebase.google.com/docs/hosting
+
+## Steps to deploy
+1. Generate static website: `npm run export`
+2. Preview the website before deployment: `firebase emulators:start`
+3. Deploy to Firebase: `firebase deploy --only hosting`
 
 # Tailwind Nextjs Starter Blog
 

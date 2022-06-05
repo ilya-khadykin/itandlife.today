@@ -1,5 +1,5 @@
-import Image from './Image'
 import Link from './Link'
+import ExportedImage from 'next-image-export-optimizer'
 
 const Card = ({ title, description, imgSrc, href }) => (
   <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
@@ -11,7 +11,7 @@ const Card = ({ title, description, imgSrc, href }) => (
       {imgSrc &&
         (href ? (
           <Link href={href} aria-label={`Link to ${title}`}>
-            <Image
+            <ExportedImage
               alt={title}
               src={imgSrc}
               className="object-cover object-center md:h-36 lg:h-48"
@@ -20,7 +20,7 @@ const Card = ({ title, description, imgSrc, href }) => (
             />
           </Link>
         ) : (
-          <Image
+          <ExportedImage
             alt={title}
             src={imgSrc}
             className="object-cover object-center md:h-36 lg:h-48"

@@ -6,7 +6,7 @@ import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { ReactNode } from 'react'
-import Image from "next/image";
+import ExportedImage from 'next-image-export-optimizer'
 
 interface Props {
   children: ReactNode
@@ -43,7 +43,7 @@ const LayoutWrapper = ({ children }: Props) => {
               ))}
             </div>
             <a href="/generated/rss/feed.xml" title="Subscribe to RSS feed">
-              <Image
+              <ExportedImage
                 src="/static/layout/icons/rss-feed-icon.svg"
                 width="32px"
                 height="32px"
