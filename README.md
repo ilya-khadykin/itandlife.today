@@ -1,190 +1,11 @@
-# Bugs
-- [ ] there might be a problem with `sortedBlogPost()` or `pagination` in `blog.tsx` when the same articles 
-are displayed in different places (discovered it by copying the same post 3 times and one of its copies appears 
-at the bottom of all posts instead of being displayed alongside the previous two)
-- [ ] pagination does not work correctly, the same posts are shown on two pages
+This is a source code for [ITandLife.today](https://itandlife.today/) - blog about programming and modern tech.
 
-# TODOs and future features
-MUST do issues:
-- [ ] Add better description for website, its title and author bio in `/about` page
+# Technologies
+- [NEXT.js](https://nextjs.org/) - The React Framework for Production
+- [Tailwind CSS](https://tailwindcss.com/) - a utility-first CSS framework
+- [Firebase](https://firebase.google.com/) - deployment platform
 
-Not prioritized:
-- [ ] [Setup budget alerts for GCP project used by Firebase Hosting](https://firebase.google.com/docs/projects/billing/avoid-surprise-bills#set-up-budget-alert-emails)
-- [ ] [Connect deployed website to Firebase web app to get analytics data](https://firebase.google.com/docs/web/setup)
-- [ ] Add recommendation card and update `/blog/windows/chocolatey-real-time-saver-for-software-management-on-windows` 
-post to use it in the end
-- [ ] Make images clickable in the post to show them in their full size on click
-- [ ] Remove link to tags page from the header and display it only for the blog
-- [ ] Add links to RSS for each tag on the respective tag page
-- [ ] Add `/projects` page
-- [ ] Post tags should be displayed under blog post title
-- [ ] Move `footer` for `PostLayout` (set as default) to the right (use `PostSimple` layout as a workaround for now)
-- [ ] Remove `Discuss on Twitter` link from `PostLayout`
-- [ ] Improve tag page for SEO and
-- [ ] support for subscribing to particular tags
-- [ ] TOC for blog posts
-- [ ] page views count
-- [ ] post read time
-- [ ] Add a link to About page for the author in `PostLayout` template
-- [ ] Add links to other social media sites (`TODO(social_media)`)
-- [ ] Consider open source the blog (`TODO(open_source_blog)`)
-- [ ] Add Google Analytics to the website (`TODO(add_ga)`)
-- [ ] Add subscribe to newsletter form (`TODO(add_newsletter)`)
-- [ ] Add comments to blog posts (`TODO(add_comments)`)
-- [ ] Update blog list page layout for large screens to include post main image
-- [ ] Track usage of `<Head>` tags and include `keys` to avoid duplication of tags
-
-# Implemented features/changes
-## All pages
-- [x] updated favicons
-- [x] updated logo (used emoji) and site name
-- [x] added RSS icon alongside theme switcher icon with a link to main RSS feed
-
-## Newsletter
-- [x] the form was removed for now
-
-## Website Analytics
-- [x] the script was commented out for now
-
-## Comments
-- [x] removed this functionality for now
-
-## Projects page
-- [x] commented a link to `/projects` in `headerNavLinks.ts`
-- [x] moved `/projects` page to `pages_unused` directory to implement it in future (`TODO(projects)`)
-
-## SEO
-- [x] Update images used as logos for SEO (`TODO(update_logo_images)`)
-
-## Code cleanup/refactoring
-- [x] Removed unused `image` property from `siteMetadata`
-
-## Blog
-### Posts Layout
-- [x] moved publish date under blog post title
-- [x] displayed tags under blog post `<header>` for `PostSimple` layout
-- [x] decreased margin and paddings in blog post header
-- [x] link to edit post on Github was hidden from `PostLayout` template
-### List page
-- [x] updated `POSTS_PER_PAGE` to 10
-
-## Bug fixes
-- [x] draft posts are displayed on list page (blog posts list and home page)
-- [x] RSS generation ignored sort order of the posts
-- [x] RSS generation included draft posts
-- [x] `sitemap.xml` generation included draft posts
-
-## Deployment
-- [x] Image optimization during static site generation is fixed by using `next-image-export-optimizer`
-- [x] A project is set up to deploy statically generated site in Firebase
----------------
-
-
-# Deployment
-The website is basically a set of static files and these files are the only thing that should be deployed.
-
-Firebase provides website hosting and steps below assume this choice.
-
-`itandlife-today-website` GCP project is configured to be used by Firebase during deployment.
-<br>`out` directory should contain the files to deploy 
-
-More details about Firebase hosting - https://firebase.google.com/docs/hosting
-
-## Steps to deploy
-1. Generate static website: `npm run export`
-2. Preview the website before deployment: `firebase emulators:start`
-3. Deploy to Firebase: `firebase deploy --only hosting`
-
-# Tailwind Nextjs Starter Blog
-
-[![GitHub Repo stars](https://img.shields.io/github/stars/timlrx/tailwind-nextjs-starter-blog?style=social)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/stargazers/)
-[![GitHub forks](https://img.shields.io/github/forks/timlrx/tailwind-nextjs-starter-blog?style=social)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/network/)
-[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Ftimlrxx)](https://twitter.com/timlrxx)
-[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/timlrx)](https://github.com/sponsors/timlrx)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/timlrx/tailwind-nextjs-starter-blog)
-
-This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) blogging starter template. Probably the most feature-rich Next.js markdown blogging template out there. Comes out of the box configured with the latest technologies to make technical writing a breeze. Easily configurable and customizable. Perfect as a replacement to existing Jekyll and Hugo individual blogs.
-
-Check out the documentation below to get started.
-
-Facing issues? Check the [FAQ page](https://github.com/timlrx/tailwind-nextjs-starter-blog/wiki) and do a search on past issues. Feel free to open a new issue if none has been posted previously.
-
-Feature request? Check the past discussions to see if it has been brought up previously. Otherwise, feel free to start a new discussion thread. All ideas are welcomed!
-
-Using the template? Feel free to create a PR and add your blog to this list.
-
-## Motivation
-
-I wanted to port my existing blog to Nextjs and Tailwind CSS but there was no easy out of the box template to use so I decided to create one. Design is adapted from [Tailwindlabs blog](https://github.com/tailwindlabs/blog.tailwindcss.com).
-
-I wanted it to be nearly as feature-rich as popular blogging templates like [beautiful-jekyll](https://github.com/daattali/beautiful-jekyll) and [Hugo Academic](https://github.com/wowchemy/wowchemy-hugo-modules) but with the best of React's ecosystem and current web development's best practices.
-
-## Features
-
-- Easy styling customization with [Tailwind 3.0](https://tailwindcss.com/blog/tailwindcss-v3) and primary color attribute
-- Near perfect lighthouse score - [Lighthouse report](https://www.webpagetest.org/result/210111_DiC1_08f3670c3430bf4a9b76fc3b927716c5/)
-- Lightweight, 45kB first load JS, uses Preact in production build
-- Mobile-friendly view
-- Light and dark theme
-- Self-hosted font with [Fontsource](https://fontsource.org/)
-- Supports [plausible](https://plausible.io/), [simple analytics](https://simpleanalytics.com/) and google analytics
-- [MDX - write JSX in markdown documents!](https://mdxjs.com/)
-- Server-side syntax highlighting with line numbers and line highlighting via [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus)
-- Math display supported via [KaTeX](https://katex.org/)
-- Citation and bibliography support via [rehype-citation](https://github.com/timlrx/rehype-citation)
-- Automatic image optimization via [next/image](https://nextjs.org/docs/basic-features/image-optimization)
-- Flexible data retrieval with [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)
-- Support for tags - each unique tag will be its own page
-- Support for multiple authors
-- Blog templates
-- TOC component
-- Support for nested routing of blog posts
-- Newsletter component with support for mailchimp, buttondown, convertkit and klaviyo
-- Supports [giscus](https://github.com/laymonage/giscus), [utterances](https://github.com/utterance/utterances) or disqus
-- Projects page
-- Preconfigured security headers
-- SEO friendly with RSS feed, sitemaps and more!
-
-## Sample posts
-
-- [A markdown guide](https://tailwind-nextjs-starter-blog.vercel.app/blog/github-markdown-guide)
-- [Learn more about images in Next.js](https://tailwind-nextjs-starter-blog.vercel.app/blog/guide-to-using-images-in-nextjs)
-- [A tour of math typesetting](https://tailwind-nextjs-starter-blog.vercel.app/blog/deriving-ols-estimator)
-- [Simple MDX image grid](https://tailwind-nextjs-starter-blog.vercel.app/blog/pictures-of-canada)
-- [Example of long prose](https://tailwind-nextjs-starter-blog.vercel.app/blog/the-time-machine)
-- [Example of Nested Route Post](https://tailwind-nextjs-starter-blog.vercel.app/blog/nested-route/introducing-multi-part-posts-with-nested-routing)
-
-## Quick Start Guide
-
-1. JS (official support)
-
-```bash
-npx degit https://github.com/timlrx/tailwind-nextjs-starter-blog.git
-```
-
-or with TypeScript (community support)
-
-```bash
-npx degit timlrx/tailwind-nextjs-starter-blog#typescript
-```
-
-2. Personalize `siteMetadata.js` (site related information)
-3. Modify the content security policy in `next.config.js` if you want to use
-   any analytics provider or a commenting solution other than giscus.
-4. Personalize `authors/default.md` (main author)
-5. Modify `projectsData.js`
-6. Modify `headerNavLinks.js` to customize navigation links
-7. Add blog posts
-8. Deploy on Vercel
-
-## Installation
-
-```bash
-npm install
-```
-
-## Development
+# Development
 
 First, run the development server:
 
@@ -202,39 +23,24 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Extend / Customize
+# Deployment
+The website is basically a set of static files and these files are the only thing that should be deployed.
 
-`data/siteMetadata.js` - contains most of the site related information which should be modified for a user's need.
+Firebase provides website hosting and steps below assume this choice.
 
-`data/authors/default.md` - default author information (required). Additional authors can be added as files in `data/authors`.
+`itandlife-today-website` GCP project is configured to be used by Firebase during deployment.
+<br>`out` directory should contain the files to deploy 
 
-`data/projectsData.js` - data used to generate styled card on the projects page.
+More details about Firebase hosting - https://firebase.google.com/docs/hosting
 
-`data/headerNavLinks.js` - navigation links.
+## Steps to deploy
+1. Generate static website: `npm run export`
+2. Preview the website before deployment: `firebase emulators:start`
+3. Deploy to Firebase: `firebase deploy --only hosting`
 
-`data/logo.svg` - replace with your own logo.
+# Post
 
-`data/blog` - replace with your own blog posts.
-
-`public/static` - store assets such as images and favicons.
-
-`tailwind.config.js` and `css/tailwind.css` - contain the tailwind stylesheet which can be modified to change the overall look and feel of the site.
-
-`css/prism.css` - controls the styles associated with the code blocks. Feel free to customize it and use your preferred prismjs theme e.g. [prism themes](https://github.com/PrismJS/prism-themes).
-
-`components/social-icons` - to add other icons, simply copy an svg file from [Simple Icons](https://simpleicons.org/) and map them in `index.js`. Other icons use [heroicons](https://heroicons.com/).
-
-`components/MDXComponents.js` - pass your own JSX code or React component by specifying it over here. You can then call them directly in the `.mdx` or `.md` file. By default, a custom link and image component is passed.
-
-`layouts` - main templates used in pages.
-
-`pages` - pages to route to. Read the [Next.js documentation](https://nextjs.org/docs) for more information.
-
-`next.config.js` - configuration related to Next.js. You need to adapt the Content Security Policy if you want to load scripts, images etc. from other domains.
-
-## Post
-
-### Frontmatter
+## Frontmatter
 
 Frontmatter follows [Hugo's standards](https://gohugo.io/content-management/front-matter/).
 
@@ -270,26 +76,17 @@ canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-t
 ---
 ```
 
-### Compose
+## Compose
 
 Run `node ./scripts/compose.js` to bootstrap a new post.
 
 Follow the interactive prompt to generate a post with pre-filled front matter.
 
-## Deploy
-
-**Vercel**  
-The easiest way to deploy the template is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js. Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-**Netlify / GitHub Pages / Firebase etc.**  
-As the template uses `next/image` for image optimization, additional configurations have to be made to deploy on other popular static hosting websites like [Netlify](https://www.netlify.com/) or [GitHub Pages](https://pages.github.com/). An alternative image optimization provider such as Imgix, Cloudinary or Akamai has to be used. Alternatively, replace the `next/image` component with a standard `<img>` tag. See [`next/image` documentation](https://nextjs.org/docs/basic-features/image-optimization) for more details.
-
-The API routes used in the newsletter component cannot be used in a static site export. You will need to use a form API endpoint provider and substitute the route in the newsletter component accordingly. Other hosting platforms such as Netlify also offer alternative solutions - please refer to their docs for more information.
-
-## Support
-
-Using the template? Support this effort by giving a star on GitHub, sharing your own blog and giving a shoutout on Twitter or becoming a project [sponsor](https://github.com/sponsors/timlrx).
-
 ## Licence
 
-[MIT](https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/LICENSE) © [Timothy Lin](https://www.timrlx.com)
+The source code in this repo is a fork from 
+[Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) developed by 
+[Timothy Lin](https://www.timrlx.com) and licenced under 
+[MIT](https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/LICENSE). 
+
+MIT license terms apply to all of my changes to the original source code.
