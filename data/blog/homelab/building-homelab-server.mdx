@@ -1,0 +1,32 @@
+---
+title: 'Building homelab server'
+date: 2022-06-05T15:34:00
+lastmod: '2022-06-05'
+tags: ['windows', 'chocolatey', 'automation']
+images: ['/static/images/blog/windows/choco.svg']
+draft: true
+summary: ''
+layout: PostSimple
+---
+## Idea
+The main idea is to use Intel NUC gen 11 to build a home lab server
+
+## Installing Proxmox on Intel NUC
+
+### Formatting USB drive
+To format a USB drive I used Ventoy
+
+Exact steps:
+1. Download Ventoy from https://www.ventoy.net/en/download.html
+2. Unzip it somewhere on your computer
+2. Find Proxmox in Tested ISOs - https://www.ventoy.net/en/isolist.html and download it. I've used [proxmox-ve_7.2-1.iso](https://github.com/ventoy/Ventoy/issues/1632)
+3. Install Ventoy on USB drive
+4. Copy downloaded Proxmox ISO from step 2 to the USB drive
+
+### Booting from Ventoy USB drive
+Once you copied Proxmox ISO to Ventoy it is time to install it on Intel NUC. To do so just insert USB drive to Intel NUC, boot it up and select Proxmox in boot menu.
+
+
+## Setting up Network configuration
+### Read current configuration
+```nano /etc/network/interfaces/```
